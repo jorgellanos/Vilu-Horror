@@ -2,6 +2,8 @@ fileFormatVersion: 2
 guid: f50eaab9ff2788842bdf5c2875f3778b
 ModelImporter:
   serializedVersion: 23
+timeCreated: 1534886855
+licenseType: Store
   fileIDToRecycleName:
     100000: foot.L
     100002: foot.R
