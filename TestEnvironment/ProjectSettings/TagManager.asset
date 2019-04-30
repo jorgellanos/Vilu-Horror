@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - projectile
+  - FxTemporaire
+  - Body
+  - Hand
+  - Player Stealth
+  - STAHP
+  - ObjetoSuelto
   layers:
   - Default
   - TransparentFX
