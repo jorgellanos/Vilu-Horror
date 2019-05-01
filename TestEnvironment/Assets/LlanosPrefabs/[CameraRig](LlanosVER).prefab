@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4039406911618665525}
   - component: {fileID: 6501200906615863132}
   - component: {fileID: 6963292939365069039}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6023946165576509719}
   - component: {fileID: 1986472844597913828}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 7822097284640517815}
   - component: {fileID: 5052816453070087703}
   - component: {fileID: 653566158409242486}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Vida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 6345000163532684103}
   - component: {fileID: 7584324563814837541}
   - component: {fileID: 7496667619823222334}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Vidas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5066615233256383955}
   - component: {fileID: 7194858793325647057}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head -conatainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 2631855649642184164}
   - component: {fileID: 8996492311432340893}
   - component: {fileID: 7651722066068462034}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 2305060094470938886}
   - component: {fileID: 5443282724334412301}
   - component: {fileID: 7189576049404175200}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cuerpo
   m_TagString: Body
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   - component: {fileID: 4368481794291205298}
   - component: {fileID: 5358497514015346130}
   - component: {fileID: 2299621958284709365}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: '[CameraRig](LlanosVER)'
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 3656851380182129895}
   - component: {fileID: 8180189366815446617}
   - component: {fileID: 3706760725437476240}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cabeza
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -879,7 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6113794369474573677}
   - component: {fileID: 4771373267622888260}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 6605097824845887208}
   - component: {fileID: 2207433339983515776}
   - component: {fileID: 6095648305807144987}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Controller (right)
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -1177,7 +1177,7 @@ GameObject:
   - component: {fileID: 826391261281964230}
   - component: {fileID: 4755835325486429360}
   - component: {fileID: 5039326583782573135}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1260,7 +1260,7 @@ GameObject:
   - component: {fileID: 1822208085221919286}
   - component: {fileID: 2034141681253337364}
   - component: {fileID: 4193371530836511418}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Controller (left)
   m_TagString: Hand
   m_Icon: {fileID: 0}
@@ -1503,7 +1503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5572333839257995966}
   - component: {fileID: 2831732986533908396}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Stealth
   m_TagString: Player Stealth
   m_Icon: {fileID: 0}
