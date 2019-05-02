@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _FogAmount: 1
-    - _FogIntensity: 0.7
+    - _FogIntensity: 0.9
     - _IntersectionThresholdMax: 1
     m_Colors:
     - _Color: {r: 0.3773585, g: 0.24029905, b: 0.24029905, a: 0.5}
