@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Coihue
-  m_Shader: {fileID: 4800000, guid: 42a928feb44215249a84838bce186598, type: 3}
-  m_ShaderKeywords: _FORCELIGHTDIRECTION_ON
+  m_Name: Ulmo
+  m_Shader: {fileID: 4800000, guid: 60ca9461000a9e647afc6186205d80ac, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -44,11 +44,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _LightingGradient:
-        m_Texture: {fileID: 2800000, guid: c8ee94f0168b75440ae490f72fd4dcf4, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3bd45c78ee34d134893e1ff836e8cbdb, type: 3}
+        m_Texture: {fileID: 2800000, guid: 802603a04915d874b83298e521b08222, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -89,8 +89,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _Clip: 0.436
-    - _Cull: 0
+    - _Clip: 0.258
+    - _Cull: 2
     - _Cutoff: 0.5
     - _Desaturation: 0.06
     - _DetailNormalMapScale: 1
@@ -102,41 +102,40 @@ Material:
     - _EmissiveScroll_Interval: 20
     - _EmissiveScroll_Velocity: 10
     - _EmissiveScroll_Width: 10
-    - _ForceLightDirection: 1
-    - _Gloss: 0.277
+    - _ForceLightDirection: 0
+    - _Gloss: 0.087
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _HARD_SPECULAR: 0
-    - _LineWidth: 0
+    - _LineWidth: 200
     - _Lit: 0
-    - _Metallic: 0.207
+    - _Metallic: 0.251
     - _Mode: 0
     - _NormalIntensity: 0
     - _OcclusionStrength: 1
     - _OutlineEmission: 0
     - _Parallax: 0.02
     - _RimLightColorBias: 0.5
-    - _RimSharpness: 0.442
-    - _RimStrength: 9.6
-    - _RimWidth: 0.867
+    - _RimSharpness: 0.34
+    - _RimStrength: 7.8
+    - _RimWidth: 0.848
     - _Roughness: 0.232
     - _SCROLLING_EMISSION: 0
     - _SampleWorld: 0
-    - _ShadowOffset: -0.4
-    - _ShadowStrength: 0.562
+    - _ShadowOffset: 0.18
+    - _ShadowStrength: 0.86
     - _SmoothnessTextureChannel: 0
-    - _SpecularBias: 0.233
+    - _SpecularBias: 0.055
     - _SpecularHighlights: 1
-    - _SpecularSize: 0.131
-    - _SpecularStrength: 1.51
-    - _Speed: 0.05
+    - _SpecularSize: 0.163
+    - _SpecularStrength: 0.53
+    - _Speed: 0
     - _SrcBlend: 1
     - _StencilCompareFunction: 0
     - _StencilOp: 0
-    - _StencilRef: 67
+    - _StencilRef: 53
     - _UVSec: 0
-    - _WindQuality: 0
     - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
@@ -144,7 +143,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionScrollSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _EmissiveScroll_Direction: {r: 0, g: -10, b: 0, a: 0}
-    - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
     - _LightDirection: {r: 0, g: 0, b: 0, a: 0}
     - _LineColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimLightColor: {r: 0, g: 0, b: 0, a: 1}
