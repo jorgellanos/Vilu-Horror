@@ -27,8 +27,8 @@ public class Hand : MonoBehaviour {
 
     // Markers
     [HideInInspector]
-    public GameObject go, go2;
-    public GameObject marker, marker2;
+    public GameObject go;
+    public GameObject marker;
 
     // parameters
     public float distance, handDistance, handSpeed;
@@ -49,9 +49,9 @@ public class Hand : MonoBehaviour {
         ChangeState();
         Interacted();
 
-        if (ln.enabled)
+        if (isUsing)
         {
-            SetLaser();
+            SetPoint();
         }
     }
 
@@ -165,9 +165,23 @@ public class Hand : MonoBehaviour {
         return nearest;
     }
     #endregion
-
+    
     #region Movement
-    public void SetLaser()
+
+    // sets cameraRig target position at marker2
+    public Vector3 SetDirection()
+    {
+        if (go)
+        {
+            return go.transform.position;
+        }
+        else
+        {
+            return pl.gameObject.transform.position;
+        }
+    }
+
+    public void SetPoint()
     {
         // Ray direction
         landingRay = new Ray(pointer.position, pointer.forward);
@@ -175,22 +189,16 @@ public class Hand : MonoBehaviour {
         // Show Marker at direction
         if (Physics.Raycast(landingRay, out hit, 20f))
         {
-            Destroy(go); // destroy clones
-            go = Instantiate(marker, hit.point, Quaternion.identity); // set marker 1 at raycast hit point
-            go.transform.position = hit.point; // marker1 follows raycast hit point position
+            if (!go)
+            {
+                go = Instantiate(marker, hit.point, Quaternion.identity); // set marker at raycast hit point
+            }
+            go.transform.position = hit.point; // marker follows raycast hit point position
         }
         else
         {
-            Destroy(go);
+            Destroy(go); // Destroy marker if raycast doesnt hit
         }
-    }
-
-    // sets cameraRig target position at marker2
-    public Vector3 SetDirection()
-    {
-        Destroy(go2);
-        go2 = Instantiate(marker2, go.transform.position, Quaternion.identity); // creates marker2 at raycast hit point
-        return go2.transform.position;
     }
 
     // Pressing the move button
@@ -198,7 +206,6 @@ public class Hand : MonoBehaviour {
     {
         if (move.GetStateDown(pose.inputSource) && !otherHand.isUsing || Input.GetKeyDown("space")) // pressed
         {
-            ln.enabled = true;
             isUsing = true;
         }
 
@@ -206,12 +213,8 @@ public class Hand : MonoBehaviour {
         {
             SetDirection();
             pl.isMoving = true;
-            ln.enabled = false;
             isUsing = false;
         }
     }
-    #endregion
-
-    #region Methods
     #endregion
 }
