@@ -1,20 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &8945983272746754376
-BoxCollider:
+--- !u!1 &2763313180479078031
+GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2763313180479078031}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.3733351, y: 4.357193, z: 0.41523597}
-  m_Center: {x: 0.015856907, y: 2.1385555, z: 0.024936453}
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 311545fc98be5b74c8b1d68e1398b2f9,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8945983272746754376}
+  m_Layer: 0
+  m_Name: Coihue (1) Variant
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1001 &2763313180479174703
-PrefabInstance:
+Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
@@ -70,9 +73,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 311545fc98be5b74c8b1d68e1398b2f9, type: 3}
---- !u!1 &2763313180479078031 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 311545fc98be5b74c8b1d68e1398b2f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 2763313180479174703}
-  m_PrefabAsset: {fileID: 0}
+  m_RootGameObject: {fileID: 0}
+  m_IsPrefabAsset: 0
+--- !u!65 &8945983272746754376
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2763313180479078031}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3733351, y: 4.357193, z: 0.41523597}
+  m_Center: {x: 0.015856907, y: 2.1385555, z: 0.024936453}
