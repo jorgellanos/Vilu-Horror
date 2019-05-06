@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _ColorRamp:
-        m_Texture: {fileID: 2800000, guid: d8c1b4433396dce44a76f57c861752f7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 285c33f35b652174d81da324dd9be06f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -29,7 +29,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _FogAmount: 1
-    - _FogIntensity: 0.9
+    - _FogIntensity: 0
     - _IntersectionThresholdMax: 1
     m_Colors:
     - _Color: {r: 0.3773585, g: 0.24029905, b: 0.24029905, a: 0.5}

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ulmo-Branch
-  m_Shader: {fileID: 4800000, guid: 572c5ba6b9b38f6499920df6da46bbf1, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _LIT
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1

@@ -81,12 +81,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BendRotationRandom: 0.008
-    - _BladeCurve: 2
-    - _BladeForward: 0.38
+    - _BladeCurve: 1
+    - _BladeForward: 0.2
     - _BladeHeight: 0
-    - _BladeHeightRandom: 0.65
-    - _BladeWidth: 0.005
-    - _BladeWidthRandom: 0.02
+    - _BladeHeightRandom: 0.04
+    - _BladeWidth: 0.04
+    - _BladeWidthRandom: 0.01
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _Deform: 0

@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Coigue-branch
-  m_Shader: {fileID: 4800000, guid: 572c5ba6b9b38f6499920df6da46bbf1, type: 3}
-  m_ShaderKeywords: _ALPHABLEND_ON _LIT
+  m_Shader: {fileID: 4800000, guid: 42a928feb44215249a84838bce186598, type: 3}
+  m_ShaderKeywords: _LIT _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -92,9 +92,9 @@ Material:
     - _Clip: 0.5
     - _Cull: 0
     - _Cutoff: 0.5
-    - _Desaturation: -1
+    - _Desaturation: 1
     - _DetailNormalMapScale: 1
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EmissionStrength: 0
     - _EmissiveBlink_Max: 1
     - _EmissiveBlink_Min: 1
@@ -111,7 +111,7 @@ Material:
     - _LineWidth: 0
     - _Lit: 1
     - _Metallic: 0
-    - _Mode: 2
+    - _Mode: 0
     - _NormalIntensity: 0
     - _OcclusionStrength: 1
     - _OutlineEmission: 0
@@ -125,19 +125,19 @@ Material:
     - _SampleWorld: 0
     - _ShadowOffset: -0.05
     - _ShadowStrength: 0
-    - _SmoothnessTextureChannel: 0
+    - _SmoothnessTextureChannel: 1
     - _SpecularBias: 0
     - _SpecularHighlights: 1
     - _SpecularSize: 0.005
     - _SpecularStrength: 0
     - _Speed: 0.05
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _StencilCompareFunction: 0
     - _StencilOp: 0
     - _StencilRef: 0
     - _UVSec: 0
     - _ZTest: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
