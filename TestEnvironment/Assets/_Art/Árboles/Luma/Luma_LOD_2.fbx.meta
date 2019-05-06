@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f84ea9865287d294aad61701cd4340ec
+guid: 49ae1c3b040a738498c7ccb4f6278f27
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hoja
-    second: {fileID: 2100000, guid: ab0a99bf064015b4c8b40faf13c031f5, type: 2}
+    second: {fileID: 2100000, guid: f3c5eb9d440067c408f376cb33f4f88a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
