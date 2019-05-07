@@ -45,9 +45,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -341,7 +342,7 @@ GameObject:
   - component: {fileID: 5066615233256383955}
   - component: {fileID: 7194858793325647057}
   m_Layer: 2
-  m_Name: Head -conatainer
+  m_Name: Head -container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,7 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftHand: {fileID: 4350278872793543636}
   rightHand: {fileID: 1157227698698193643}
-  an: {fileID: 0}
+  an: {fileID: 7194858793325647057}
   vida: {fileID: 8180189366815446617}
   leftSpeed: 0
   rightSpeed: 0
@@ -1115,9 +1116,7 @@ MonoBehaviour:
   otherHand: {fileID: 4350278872793543636}
   pl: {fileID: 2305060094470938886}
   go: {fileID: 0}
-  go2: {fileID: 0}
   marker: {fileID: 0}
-  marker2: {fileID: 0}
   distance: 2000
   handDistance: 0
   handSpeed: 0
@@ -1442,9 +1441,7 @@ MonoBehaviour:
   otherHand: {fileID: 1157227698698193643}
   pl: {fileID: 2305060094470938886}
   go: {fileID: 0}
-  go2: {fileID: 0}
   marker: {fileID: 0}
-  marker2: {fileID: 0}
   distance: 2000
   handDistance: 0
   handSpeed: 0
