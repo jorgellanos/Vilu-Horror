@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0006fce16b7827143922a7f5da42aed3
+guid: fd0dbf25f055329488cd06c75bfd0ff5
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Hoja
-    second: {fileID: 2100000, guid: f3c5eb9d440067c408f376cb33f4f88a, type: 2}
+    second: {fileID: 2100000, guid: aaa6e71e5c7710c43ae66ac13d714a1b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Madera
-    second: {fileID: 2100000, guid: bd6b439878b9b3540861955f71c536f4, type: 2}
+    second: {fileID: 2100000, guid: 1c1effd93e5442647932ed50135bfa7e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
