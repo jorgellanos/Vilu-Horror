@@ -31,4 +31,13 @@ public class LightChanger : MonoBehaviour
             itsTime = false;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Hand")
+        {
+            itsTime = true;
+        }
+    }
+    
 }
