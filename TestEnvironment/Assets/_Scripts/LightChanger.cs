@@ -23,6 +23,22 @@ public class LightChanger : MonoBehaviour
     {
         RenderSettings.skybox.SetFloat("_Blend", num);
     }
+    
+    public void cambiarSkybox()
+    {
+        num = num - 0.1f * Time.deltaTime;
+        if (num <= 0)
+        {
+            itsTime = false;
+        }
+    }
 
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Hand")
+        {
+            itsTime = true;
+        }
+    }
+    
 }
