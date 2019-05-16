@@ -207,6 +207,7 @@ public class Hand : MonoBehaviour {
         if (move.GetStateDown(pose.inputSource) && !otherHand.isUsing || Input.GetKeyDown("space")) // pressed
         {
             isUsing = true;
+            ln.enabled = true;
         }
 
         if (move.GetStateUp(pose.inputSource) || Input.GetKeyUp("space")) // lifted
@@ -214,6 +215,7 @@ public class Hand : MonoBehaviour {
             SetDirection();
             pl.isMoving = true;
             isUsing = false;
+            ln.enabled = false;
         }
     }
     #endregion
