@@ -98,7 +98,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7d5f88eb96f7a124db0a1886b4151043, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -197,9 +197,7 @@ MonoBehaviour:
   otherHand: {fileID: 7186730422433098438}
   pl: {fileID: 7804208990646583595}
   go: {fileID: 0}
-  go2: {fileID: 0}
   marker: {fileID: 0}
-  marker2: {fileID: 0}
   distance: 2000
   handDistance: 0
   handSpeed: 0
@@ -603,7 +601,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7d5f88eb96f7a124db0a1886b4151043, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -702,9 +700,7 @@ MonoBehaviour:
   otherHand: {fileID: 5759086728887849977}
   pl: {fileID: 7804208990646583595}
   go: {fileID: 0}
-  go2: {fileID: 0}
   marker: {fileID: 0}
-  marker2: {fileID: 0}
   distance: 2000
   handDistance: 0
   handSpeed: 0
@@ -1450,9 +1446,10 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
