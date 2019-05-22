@@ -843,7 +843,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe09c68ccb4b2d42a17d2d1f62d470b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
   startingHealth: 100
   currentHealth: 0
   startingLifes: 5
@@ -1113,6 +1112,9 @@ MonoBehaviour:
   move:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
+  useItem:
+    actionPath: /actions/default/in/UseItem
+    needsReinit: 0
   otherHand: {fileID: 4350278872793543636}
   pl: {fileID: 2305060094470938886}
   go: {fileID: 0}
@@ -1122,6 +1124,7 @@ MonoBehaviour:
   handSpeed: 0
   pressing: 0
   isUsing: 0
+  usingItem: 0
 --- !u!135 &6605097824845887208
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1438,6 +1441,9 @@ MonoBehaviour:
   move:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
+  useItem:
+    actionPath: /actions/default/in/UseItem
+    needsReinit: 0
   otherHand: {fileID: 1157227698698193643}
   pl: {fileID: 2305060094470938886}
   go: {fileID: 0}
@@ -1447,6 +1453,7 @@ MonoBehaviour:
   handSpeed: 0
   pressing: 0
   isUsing: 0
+  usingItem: 0
 --- !u!135 &1822208085221919286
 SphereCollider:
   m_ObjectHideFlags: 0

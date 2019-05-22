@@ -8,6 +8,7 @@ public class Hand : MonoBehaviour {
     // VR Inputs
     public SteamVR_Action_Boolean grabbing = null;
     public SteamVR_Action_Boolean move = null;
+    public SteamVR_Action_Boolean useItem = null;
     private SteamVR_Behaviour_Pose pose = null;
 
     // Interaction
@@ -32,7 +33,7 @@ public class Hand : MonoBehaviour {
 
     // parameters
     public float distance, handDistance, handSpeed;
-    public bool pressing, isUsing;
+    public bool pressing, isUsing, usingItem;
 
     private void Awake()
     {
@@ -82,6 +83,19 @@ public class Hand : MonoBehaviour {
     #endregion
 
     #region Interact
+    public void UseItem()
+    {
+        if (useItem.GetStateDown(pose.inputSource) || Input.GetKeyDown("e"))
+        {
+            usingItem = true;
+        }
+
+        if (useItem.GetStateUp(pose.inputSource) || Input.GetKeyDown("e"))
+        {
+            usingItem = false;
+        }
+    }
+
     public void PickUp()
     {
         // get nearest

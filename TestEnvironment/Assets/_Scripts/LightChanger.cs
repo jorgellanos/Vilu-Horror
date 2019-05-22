@@ -5,7 +5,7 @@ using UnityEngine;
 public class LightChanger : MonoBehaviour
 {
     public float num;
-
+    public bool itsTime;
 
     // Start is called before the first frame update
     void Start()
