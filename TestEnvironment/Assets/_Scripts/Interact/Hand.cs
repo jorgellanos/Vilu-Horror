@@ -64,7 +64,7 @@ public class Hand : MonoBehaviour {
     #region Triggers
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("ObjetoSuelto"))
+        if (!other.gameObject.CompareTag("ObjetoSuelto") || !other.gameObject.CompareTag("ObjetoInventario"))
         {
             return;
         }
@@ -73,7 +73,7 @@ public class Hand : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.CompareTag("ObjetoSuelto"))
+        if (!other.gameObject.CompareTag("ObjetoSuelto") || !other.gameObject.CompareTag("ObjetoInventario"))
         {
             return;
         }
@@ -92,7 +92,7 @@ public class Hand : MonoBehaviour {
         {
             return;
         }
-
+        
         // already held
         if (current.activeHand)
         {
@@ -102,10 +102,16 @@ public class Hand : MonoBehaviour {
         // position
         current.transform.position = transform.position;
 
+        // rotation
+        current.transform.rotation = Quaternion.LookRotation(transform.forward);
+
         // attach
         Rigidbody target = current.GetComponent<Rigidbody>();
         joint.connectedBody = target;
-        
+
+        // set object STATE
+        current.picked = true;
+
         // set active hand
         current.activeHand = this;
     }
@@ -136,12 +142,20 @@ public class Hand : MonoBehaviour {
         if (grabbing.GetStateDown(pose.inputSource) || Input.GetKeyDown("r"))
         {
             PickUp();
+            if (current.tag == "ObjetoInventario" && !current.picked)
+            {
+                Drop();
+            }
             pressing = true;
         }
 
         if (grabbing.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
         {
-            Drop();
+            if (current.tag != "ObjetoInventario")
+            {
+                Drop();
+            }
+            current.picked = false;
             pressing = false;
         }
     }

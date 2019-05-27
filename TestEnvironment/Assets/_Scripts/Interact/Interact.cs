@@ -11,7 +11,7 @@ public class Interact : MonoBehaviour {
 
     private Sound s;
 
-    public bool examined, dropped, impact, touched;
+    public bool examined, dropped, impact, touched, picked;
     public float velocity;
     private TextMesh text;
 
@@ -20,6 +20,7 @@ public class Interact : MonoBehaviour {
         text = GetComponentInChildren<TextMesh>();
         s = GetComponent<Sound>();
         examined = false;
+        picked = false;
         text.text = string.Empty;
     }
 
@@ -31,10 +32,13 @@ public class Interact : MonoBehaviour {
         }
         else
         {
-            text.text = string.Empty;
+            if (text != null)
+            {
+                text.text = string.Empty;
+            }
         }
 
-        if (impact)
+        if (impact && s != null)
         {
             s.Impact(velocity);
             impact = false;

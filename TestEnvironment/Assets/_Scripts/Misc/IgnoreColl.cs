@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IgnoreColl : MonoBehaviour
 {
-    public Collider c1, c2;
+    public Collider c1, c2, c3;
 
     public bool collided;
 
@@ -26,11 +26,17 @@ public class IgnoreColl : MonoBehaviour
     public void Ignore()
     {
         Physics.IgnoreCollision(c1,c2);
+        Physics.IgnoreCollision(c1, CheckC3());
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider == c2)
+        {
+            collided = true;
+        }
+
+        if (collision.collider == CheckC3())
         {
             collided = true;
         }
@@ -42,6 +48,11 @@ public class IgnoreColl : MonoBehaviour
         {
             collided = true;
         }
+
+        if (collision.collider == CheckC3())
+        {
+            collided = true;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -49,6 +60,23 @@ public class IgnoreColl : MonoBehaviour
         if (collision.collider == c2)
         {
             collided = false;
+        }
+
+        if (collision.collider == CheckC3())
+        {
+            collided = false;
+        }
+    }
+
+    public Collider CheckC3()
+    {
+        if (c3 != null)
+        {
+            return c3;
+        }
+        else
+        {
+            return c2;
         }
     }
 }
