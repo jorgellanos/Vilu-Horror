@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.testenvironment.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\jorge\\Desktop\\misWEAITAS\\HorrorVR\\Horror1.6\\Vilu-Horror\\TestEnvironment\\actions.json",
+      "action_manifest_path": "C:\\Users\\CittVR\\Desktop\\Vilú\\Environment\\Vilu-Horror\\TestEnvironment\\actions.json",
       "strings": {
         "en_us": {
           "name": "TestEnvironment [Testing]"
