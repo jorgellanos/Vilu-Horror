@@ -10,12 +10,14 @@ public class Linterna : MonoBehaviour
     // Reference
     public Hand currentHand;
     public Light lt;
+    public GameObject prefabS;
     private Transform pointer;
     private GameObject eventTrigger;
 
     // RayCast
     public RaycastHit hit;
     public Ray landingRay;
+    private GameObject eventObject;
 
     // Start is called before the first frame update
     void Start()
@@ -97,7 +99,10 @@ public class Linterna : MonoBehaviour
     {
         if (hit.collider.gameObject.name == "Stairs")
         {
-            Debug.Log("SOOOOOOOOOOUUUUUUUUUNNNNNNNDDDDD");
+            if (!eventObject)
+            {
+                eventObject = Instantiate(prefabS, hit.point, Quaternion.identity);
+            }
         }
     }
 }
