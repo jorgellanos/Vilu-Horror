@@ -85,13 +85,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaCutoff: 0.533
-    - _BendRotationRandom: 0.008
-    - _BladeCurve: 2
+    - _BendRotationRandom: 1
+    - _BladeCurve: 4
     - _BladeForward: 0.38
     - _BladeHeight: 0
     - _BladeHeightRandom: 0.65
-    - _BladeWidth: 0.01
-    - _BladeWidthRandom: 0.02
+    - _BladeWidth: -0.03
+    - _BladeWidthRandom: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _Deform: 0.429
@@ -118,17 +118,17 @@ Material:
     - _SpeedX: 0.63
     - _SpeedY: 1
     - _SrcBlend: 1
-    - _TessellationUniform: 12.1
-    - _TranslucentGain: 0.171
+    - _TessellationUniform: 11.8
+    - _TranslucentGain: 0
     - _UVSec: 0
     - _WindStrength: 0.5
     - _ZWrite: 1
     m_Colors:
-    - _BottomColor: {r: 0.010679956, g: 0.1509434, b: 0.018930754, a: 1}
+    - _BottomColor: {r: 0, g: 0, b: 0, a: 1}
     - _Color: {r: 0.06129726, g: 0.37799996, b: 0.07151345, a: 1}
     - _ColorA: {r: 1, g: 1, b: 1, a: 1}
     - _ColorB: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flow: {r: 0, g: 1, b: 0, a: -1}
-    - _TopColor: {r: 0.2995728, g: 0.41509432, b: 0.33278522, a: 1}
+    - _TopColor: {r: 0.009916985, g: 0.4339623, b: 0, a: 0}
     - _WindFrequency: {r: 0.05, g: 0.05, b: 0, a: 0}
