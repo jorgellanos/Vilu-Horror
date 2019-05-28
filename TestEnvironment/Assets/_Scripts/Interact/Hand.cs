@@ -7,13 +7,14 @@ public class Hand : MonoBehaviour {
 
     // VR Inputs
     public SteamVR_Action_Boolean grabbing = null;
+    public SteamVR_Action_Boolean dropping = null;
     public SteamVR_Action_Boolean move = null;
     private SteamVR_Behaviour_Pose pose = null;
 
     // Interaction
     private FixedJoint joint = null;
-    private Interact current = null;
-    private List<Interact> contacts = new List<Interact>();
+    public Interact current = null;
+    public List<Interact> contacts = new List<Interact>();
 
     // RayCast
     public RaycastHit hit;
@@ -64,20 +65,18 @@ public class Hand : MonoBehaviour {
     #region Triggers
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("ObjetoSuelto") || !other.gameObject.CompareTag("ObjetoInventario"))
+        if (other.tag == "ObjetoSuelto" || other.tag == "ObjetoInventario")
         {
-            return;
+            contacts.Add(other.gameObject.GetComponent<Interact>());
         }
-        contacts.Add(other.gameObject.GetComponent<Interact>());
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.CompareTag("ObjetoSuelto") || !other.gameObject.CompareTag("ObjetoInventario"))
+        if (other.tag == "ObjetoSuelto")
         {
-            return;
+            contacts.Remove(other.gameObject.GetComponent<Interact>());
         }
-        contacts.Remove(other.gameObject.GetComponent<Interact>());
     }
     #endregion
 
@@ -108,10 +107,7 @@ public class Hand : MonoBehaviour {
         // attach
         Rigidbody target = current.GetComponent<Rigidbody>();
         joint.connectedBody = target;
-
-        // set object STATE
-        current.picked = true;
-
+        
         // set active hand
         current.activeHand = this;
     }
@@ -124,17 +120,26 @@ public class Hand : MonoBehaviour {
             return;
         }
 
-        // apply velocity
-        Rigidbody target = current.GetComponent<Rigidbody>();
-        target.velocity = pose.GetVelocity();
-        target.angularVelocity = pose.GetAngularVelocity();
+        if (current.gameObject.tag != "ObjetoInventario")
+        {
+            // apply velocity
+            Rigidbody target = current.GetComponent<Rigidbody>();
+            target.velocity = pose.GetVelocity();
+            target.angularVelocity = pose.GetAngularVelocity();
 
-        // detach
-        joint.connectedBody = null;
-
+            // detach
+            joint.connectedBody = null;
+        }
+        
         // clear
         current.activeHand = null;
         current = null;
+    }
+
+    public void DropAll()
+    {
+        // detach
+        joint.connectedBody = null;
     }
 
     public void Interacted()
@@ -142,21 +147,18 @@ public class Hand : MonoBehaviour {
         if (grabbing.GetStateDown(pose.inputSource) || Input.GetKeyDown("r"))
         {
             PickUp();
-            if (current.tag == "ObjetoInventario" && !current.picked)
-            {
-                Drop();
-            }
             pressing = true;
         }
 
         if (grabbing.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
         {
-            if (current.tag != "ObjetoInventario")
-            {
-                Drop();
-            }
-            current.picked = false;
+            Drop();
             pressing = false;
+        }
+
+        if (dropping.GetStateDown(pose.inputSource))
+        {
+            DropAll();
         }
     }
 

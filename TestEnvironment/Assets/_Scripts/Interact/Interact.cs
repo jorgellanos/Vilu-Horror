@@ -61,7 +61,6 @@ public class Interact : MonoBehaviour {
                 Debug.Log("OUF");
             }
         }
-
     }
 
     private void OnTriggerStay(Collider other)
