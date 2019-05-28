@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5174796463794292318}
   - component: {fileID: 5174796463794292305}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: EventSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 822668ad02887b341b75bd775f731676, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cca774a7b20c942499cf9b8436a5cba3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.52
   m_Pitch: 1

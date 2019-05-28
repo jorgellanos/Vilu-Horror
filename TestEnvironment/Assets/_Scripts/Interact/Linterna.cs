@@ -6,6 +6,7 @@ public class Linterna : MonoBehaviour
 {
     // Variables
     public bool on;
+    public string ev;
 
     // Reference
     public Hand currentHand;
@@ -97,7 +98,7 @@ public class Linterna : MonoBehaviour
 
     public void GetEvent()
     {
-        if (hit.collider.gameObject.name == "Stairs")
+        if (hit.collider.gameObject.name == ev)
         {
             if (!eventObject)
             {

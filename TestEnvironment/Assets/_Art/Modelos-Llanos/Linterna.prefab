@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 4463106139837189842}
   - component: {fileID: 3511884521841478782}
   - component: {fileID: 4869109521429166223}
+  - component: {fileID: 5078293422035172223}
   m_Layer: 0
   m_Name: Linterna
   m_TagString: ObjetoInventario
@@ -269,6 +270,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.09866333, y: 0.11080885, z: 0.38087463}
   m_Center: {x: -0.0011444092, y: -0.003153205, z: 0.04042816}
+--- !u!114 &5078293422035172223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914770257669436680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57946d2f69ac7e45aeae8465192b543, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeHand: {fileID: 0}
+  examined: 0
+  dropped: 0
+  impact: 0
+  touched: 0
+  picked: 0
+  velocity: 0
 --- !u!1001 &5096822784815064558
 PrefabInstance:
   m_ObjectHideFlags: 0
