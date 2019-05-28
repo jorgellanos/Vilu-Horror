@@ -191,9 +191,14 @@ MonoBehaviour:
   grabbing:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
+  dropping:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
   move:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
+  current: {fileID: 0}
+  contacts: []
   otherHand: {fileID: 7186730422433098438}
   pl: {fileID: 7804208990646583595}
   go: {fileID: 0}
@@ -694,9 +699,14 @@ MonoBehaviour:
   grabbing:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
+  dropping:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
   move:
     actionPath: /actions/default/in/Teleport
     needsReinit: 0
+  current: {fileID: 0}
+  contacts: []
   otherHand: {fileID: 5759086728887849977}
   pl: {fileID: 7804208990646583595}
   go: {fileID: 0}

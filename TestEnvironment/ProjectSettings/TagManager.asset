@@ -11,7 +11,7 @@ TagManager:
   - Player Stealth
   - STAHP
   - ObjetoSuelto
-  - Event
+  - ObjetoInventario
   layers:
   - Default
   - TransparentFX
