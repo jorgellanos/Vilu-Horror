@@ -110,6 +110,7 @@ public class Hand : MonoBehaviour {
         
         // set active hand
         current.activeHand = this;
+        
     }
 
     public void Drop()
@@ -138,8 +139,18 @@ public class Hand : MonoBehaviour {
 
     public void DropAll()
     {
+        // nullcheck
+        if (!current)
+        {
+            return;
+        }
+
         // detach
         joint.connectedBody = null;
+
+        // clear
+        current.activeHand = null;
+        current = null;
     }
 
     public void Interacted()

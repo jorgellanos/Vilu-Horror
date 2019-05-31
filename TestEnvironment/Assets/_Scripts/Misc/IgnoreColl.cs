@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IgnoreColl : MonoBehaviour
 {
-    private Collider c1;
+    public Collider c1,c3;
 
     public int numColl;
     public Collider[] colliders;
@@ -27,10 +27,10 @@ public class IgnoreColl : MonoBehaviour
 
     public void Ignore()
     {
-        foreach (Collider col in colliders)
-        {
-            Physics.IgnoreCollision(c1, col);
-        }
+        Physics.IgnoreCollision(c1, c3);
+        Physics.IgnoreCollision(c1, colliders[2]);
+        Physics.IgnoreCollision(c1, colliders[1]);
+        Physics.IgnoreCollision(c1, colliders[0]);
     }
 
     public void SetArrayLength()

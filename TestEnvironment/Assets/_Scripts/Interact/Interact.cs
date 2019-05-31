@@ -21,7 +21,10 @@ public class Interact : MonoBehaviour {
         s = GetComponent<Sound>();
         examined = false;
         picked = false;
-        text.text = string.Empty;
+        if (text)
+        {
+            text.text = string.Empty;
+        }
     }
 
     private void Update()
@@ -48,7 +51,7 @@ public class Interact : MonoBehaviour {
     #region COLLISIONS
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Hand")
+        if (other.tag == "Hand" || Input.GetKeyDown("l"))
         {
             examined = true;
             touched = true;
@@ -73,7 +76,7 @@ public class Interact : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Hand")
+        if (other.tag == "Hand" || Input.GetKeyUp("l"))
         {
             examined = false;
         }
@@ -89,7 +92,10 @@ public class Interact : MonoBehaviour {
     #endregion
     public void Examine()
     {
-        text.text = gameObject.name; // show object STATS
+        if (text)
+        {
+            text.text = gameObject.name; // show object STATS
+        }
     }
 
     public void GetVelocity(Vector3 vel)
