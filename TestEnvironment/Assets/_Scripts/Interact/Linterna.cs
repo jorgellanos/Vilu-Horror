@@ -32,7 +32,7 @@ public class Linterna : MonoBehaviour
     {
         Raycasting();
 
-        if (currentHand != null)
+        if (currentHand)
         {
             turnOnOff();
         }
@@ -67,7 +67,7 @@ public class Linterna : MonoBehaviour
 
     public void turnOnOff()
     {
-        if (currentHand.isUsing)
+        if (currentHand.itemAction)
         {
             if (on)
             {

@@ -102,4 +102,5 @@ public class Interact : MonoBehaviour {
     {
         velocity = vel.magnitude; // get velocity from hand velocity
     }
+    
 }

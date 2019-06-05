@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7026107671543459918}
   - component: {fileID: 7170631184479186642}
   - component: {fileID: 4980556653851795396}
-  - component: {fileID: 6097673861239675867}
   - component: {fileID: 6472747091204610423}
   - component: {fileID: 3097883070317833606}
   m_Layer: 0
@@ -72,21 +71,6 @@ MonoBehaviour:
   touched: 0
   picked: 0
   velocity: 0
---- !u!114 &6097673861239675867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340445013706727425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54c5db0b367598e4c9a63afcb5c450e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numColl: 0
-  colliders: []
-  collided: 0
 --- !u!114 &6472747091204610423
 MonoBehaviour:
   m_ObjectHideFlags: 0
