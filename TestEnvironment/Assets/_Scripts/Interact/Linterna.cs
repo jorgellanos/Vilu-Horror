@@ -72,10 +72,12 @@ public class Linterna : MonoBehaviour
             if (on)
             {
                 on = false;
+                currentHand.itemAction = false;
             }
             else
             {
                 on = true;
+                currentHand.itemAction = false;
             }
         }
     }
