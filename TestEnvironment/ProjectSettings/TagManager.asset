@@ -22,12 +22,12 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Terrain
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Inventory
+  - Piso
+  - Head
+  - Hands
+  - Objects
+  - Body
   - 
   - 
   - 

@@ -7,7 +7,6 @@ public class Hand : MonoBehaviour {
 
     // VR Inputs
     public SteamVR_Action_Boolean grabbing = null;
-    public SteamVR_Action_Boolean dropping = null;
     public SteamVR_Action_Boolean move = null;
     public SteamVR_Action_Boolean useItem = null;
     private SteamVR_Behaviour_Pose pose = null;
@@ -34,7 +33,7 @@ public class Hand : MonoBehaviour {
 
     // parameters
     public float distance, handDistance, handSpeed;
-    public bool pressing, isUsing, usingItem;
+    public bool pressing, isUsing, itemAction;
 
     private void Awake()
     {
@@ -48,8 +47,16 @@ public class Hand : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        ChangeState();
         Interacted();
+
+        if (!current)
+        {
+            ChangeState();
+        }
+        else
+        {
+            UseItem();
+        }
 
         if (isUsing)
         {
@@ -133,27 +140,18 @@ public class Hand : MonoBehaviour {
         {
             return;
         }
+        
+        // apply velocity
+        Rigidbody target = current.GetComponent<Rigidbody>();
+        target.velocity = pose.GetVelocity();
+        target.angularVelocity = pose.GetAngularVelocity();
 
-        if (current.gameObject.tag != "ObjetoInventario")
-        {
-            // apply velocity
-            Rigidbody target = current.GetComponent<Rigidbody>();
-            target.velocity = pose.GetVelocity();
-            target.angularVelocity = pose.GetAngularVelocity();
-
-            // detach
-            joint.connectedBody = null;
-        }
+        // detach
+        joint.connectedBody = null;
         
         // clear
         current.activeHand = null;
         current = null;
-    }
-
-    public void DropAll()
-    {
-        // detach
-        joint.connectedBody = null;
     }
 
     public void Interacted()
@@ -169,10 +167,18 @@ public class Hand : MonoBehaviour {
             Drop();
             pressing = false;
         }
+    }
 
-        if (dropping.GetStateDown(pose.inputSource))
+    public void UseItem()
+    {
+        if (move.GetStateDown(pose.inputSource) || Input.GetKeyDown("r"))
         {
-            DropAll();
+            itemAction = true;
+        }
+
+        if (move.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
+        {
+            itemAction = false;
         }
     }
 

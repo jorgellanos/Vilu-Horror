@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class IgnoreColl : MonoBehaviour
 {
-    public Collider c1, c2, c3;
+    public Collider c1,c3;
+
+    public int numColl;
+    public Collider[] colliders;
 
     public bool collided;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,66 +21,24 @@ public class IgnoreColl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (collided)
-        {
-            Ignore();
-        }
+        SetArrayLength();
+        Ignore();
     }
 
     public void Ignore()
     {
-        Physics.IgnoreCollision(c1,c2);
-        Physics.IgnoreCollision(c1, CheckC3());
+        Physics.IgnoreCollision(c1, c3);
+        Physics.IgnoreCollision(c1, colliders[2]);
+        Physics.IgnoreCollision(c1, colliders[1]);
+        Physics.IgnoreCollision(c1, colliders[0]);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void SetArrayLength()
     {
-        if (collision.collider == c2)
+        if (colliders.Length < numColl || colliders.Length > numColl)
         {
-            collided = true;
-        }
-
-        if (collision.collider == CheckC3())
-        {
-            collided = true;
+            colliders = new Collider[numColl];
         }
     }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.collider == c2)
-        {
-            collided = true;
-        }
-
-        if (collision.collider == CheckC3())
-        {
-            collided = true;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.collider == c2)
-        {
-            collided = false;
-        }
-
-        if (collision.collider == CheckC3())
-        {
-            collided = false;
-        }
-    }
-
-    public Collider CheckC3()
-    {
-        if (c3 != null)
-        {
-            return c3;
-        }
-        else
-        {
-            return c2;
-        }
-    }
+    
 }
