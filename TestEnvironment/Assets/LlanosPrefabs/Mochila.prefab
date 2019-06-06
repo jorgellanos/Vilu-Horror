@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7018338079744632281}
   - component: {fileID: 3095404924621729170}
   - component: {fileID: 3269824768524920256}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: WeaitaEsaDeLASCORREAS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 111886079040870270}
   - component: {fileID: 1583736778894778262}
   - component: {fileID: 6640578190847412628}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 9001847950064447881}
   - component: {fileID: 3477547784462550252}
   - component: {fileID: 4303677929535580040}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Correas2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 5959878465490104698}
   - component: {fileID: 1494502989463148283}
   - component: {fileID: 2133178114528280094}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: MochilaHP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 3393390642459232085}
   - component: {fileID: 3393390642459232084}
   - component: {fileID: 3393390642459232083}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Mochila
   m_TagString: ObjetoSuelto
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 4456165343621348042}
   - component: {fileID: 8163285805957490550}
   - component: {fileID: 8025040230294256581}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Correas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 6758629069422187318}
   - component: {fileID: 7935581619339412766}
   - component: {fileID: 2772016454620758764}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: MochilaLP
   m_TagString: Untagged
   m_Icon: {fileID: 0}

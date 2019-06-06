@@ -89,18 +89,6 @@ public class Hand : MonoBehaviour {
     #endregion
 
     #region Interact
-    public void UseItem()
-    {
-        if (useItem.GetStateDown(pose.inputSource) || Input.GetKeyDown("e"))
-        {
-            usingItem = true;
-        }
-
-        if (useItem.GetStateUp(pose.inputSource) || Input.GetKeyDown("e"))
-        {
-            usingItem = false;
-        }
-    }
 
     public void PickUp()
     {
@@ -171,12 +159,12 @@ public class Hand : MonoBehaviour {
 
     public void UseItem()
     {
-        if (move.GetStateDown(pose.inputSource) || Input.GetKeyDown("r"))
+        if (move.GetStateDown(pose.inputSource) || Input.GetKeyDown("e"))
         {
             itemAction = true;
         }
 
-        if (move.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
+        if (move.GetStateUp(pose.inputSource) || Input.GetKeyUp("e"))
         {
             itemAction = false;
         }

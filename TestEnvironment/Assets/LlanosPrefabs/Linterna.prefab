@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4980556653851795396}
   - component: {fileID: 6472747091204610423}
   - component: {fileID: 3097883070317833606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Linterna
   m_TagString: ObjetoInventario
   m_Icon: {fileID: 0}
@@ -84,6 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   on: 0
+  ev: 
   currentHand: {fileID: 0}
   lt: {fileID: 2578155537825541888}
   prefabS: {fileID: 5174796463794292304, guid: 2075dbc6aafeeed4caf49e1d85ec90af, type: 3}
@@ -112,7 +113,7 @@ GameObject:
   - component: {fileID: 2578155537825541888}
   - component: {fileID: 5266724388515155713}
   - component: {fileID: 2318831500381870518}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +264,7 @@ GameObject:
   - component: {fileID: 7687170596179876861}
   - component: {fileID: 1726380946110685643}
   - component: {fileID: 4956738303272803634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: linterna
   m_TagString: Untagged
   m_Icon: {fileID: 0}
