@@ -10,7 +10,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7874081025299376703}
-  m_Layer: 15
+  m_Layer: 2
   m_Name: dir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7874081025352868879}
   - component: {fileID: 7874081025352868866}
   - component: {fileID: 7874081025352868865}
-  m_Layer: 15
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 7874081025491524827}
   - component: {fileID: 7874081025491524826}
   - component: {fileID: 7874081025491524825}
-  m_Layer: 15
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   - component: {fileID: 7874081026041553785}
   - component: {fileID: 7874081026041553784}
   - component: {fileID: 7874081026041553789}
-  m_Layer: 15
+  m_Layer: 2
   m_Name: Base
   m_TagString: STAHP
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7874081026041553799}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 2.928184, z: 1}
@@ -357,7 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8502558631592112205}
   - component: {fileID: 3891731726273063581}
-  m_Layer: 15
+  m_Layer: 2
   m_Name: Marker
   m_TagString: STAHP
   m_Icon: {fileID: 0}
@@ -387,7 +387,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051721934728296685}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -402,17 +402,17 @@ PrefabInstance:
     - target: {fileID: 1089388884092957575, guid: ebf76fe8490fb664ea5aa5183ab9090d,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7815348523856797053, guid: ebf76fe8490fb664ea5aa5183ab9090d,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3880070374513870896, guid: ebf76fe8490fb664ea5aa5183ab9090d,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4998492610815743405, guid: ebf76fe8490fb664ea5aa5183ab9090d,
         type: 3}
@@ -477,7 +477,12 @@ PrefabInstance:
     - target: {fileID: 8445028126963801448, guid: ebf76fe8490fb664ea5aa5183ab9090d,
         type: 3}
       propertyPath: m_Layer
-      value: 15
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223852010407102469, guid: ebf76fe8490fb664ea5aa5183ab9090d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebf76fe8490fb664ea5aa5183ab9090d, type: 3}
