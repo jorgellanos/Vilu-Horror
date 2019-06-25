@@ -6,7 +6,7 @@ using Valve.VR;
 public class MovementTouchpad : MonoBehaviour
 {
     //[SteamVR_DefaultAction("MoveTouchpad")]
-    public SteamVR_Action_Vector2 touchpd;
+    public SteamVR_Action_Vector2 touchpad;
     public float speed;
     private Vector2 movimiento = Vector2.zero;
     public Transform cameraRig;
@@ -23,7 +23,7 @@ public class MovementTouchpad : MonoBehaviour
 
     void Movement()
     {
-        movimiento = touchpd.GetAxis(SteamVR_Input_Sources.Any);
+        movimiento = touchpad.GetAxis(SteamVR_Input_Sources.Any);
         cameraRig.position += (transform.right * movimiento.x + transform.forward * movimiento.y) * Time.deltaTime * speed;
         cameraRig.position = new Vector3(cameraRig.position.x, cameraRig.position.y, cameraRig.position.z);
     }

@@ -94,7 +94,7 @@ public class Interact : MonoBehaviour {
     {
         if (text)
         {
-            text.text = gameObject.name; // show object STATS
+            //text.text = gameObject.name; // show object STATS
         }
     }
 
