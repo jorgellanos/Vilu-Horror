@@ -12,6 +12,7 @@ TagManager:
   - STAHP
   - ObjetoSuelto
   - ObjetoInventario
+  - Event
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Hands
   - Objects
   - Body
-  - 
+  - Marker
   - 
   - 
   - 

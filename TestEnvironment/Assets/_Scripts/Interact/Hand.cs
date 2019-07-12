@@ -7,13 +7,14 @@ public class Hand : MonoBehaviour {
 
     // VR Inputs
     public SteamVR_Action_Boolean grabbing = null;
+    public SteamVR_Action_Boolean gripping = null;
     public SteamVR_Action_Boolean move = null;
     public SteamVR_Action_Boolean useItem = null;
     private SteamVR_Behaviour_Pose pose = null;
 
     // Interaction
     private FixedJoint joint = null;
-    public Interact current = null;
+    private Interact current = null;
     public List<Interact> contacts = new List<Interact>();
 
     // RayCast
@@ -33,7 +34,7 @@ public class Hand : MonoBehaviour {
 
     // parameters
     public float distance, handDistance, handSpeed;
-    public bool pressing, isUsing, itemAction;
+    public bool pressing, isUsing, itemAction, griped;
 
     private void Awake()
     {
@@ -81,7 +82,7 @@ public class Hand : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "ObjetoSuelto")
+        if (other.tag == "ObjetoSuelto" || other.tag == "ObjetoInventario")
         {
             contacts.Remove(other.gameObject.GetComponent<Interact>());
         }
@@ -104,7 +105,7 @@ public class Hand : MonoBehaviour {
         // already held
         if (current.activeHand)
         {
-            current.activeHand.Drop();
+            //current.activeHand.Drop();
         }
 
         // position
@@ -150,10 +151,29 @@ public class Hand : MonoBehaviour {
             pressing = true;
         }
 
-        if (grabbing.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
+        if (current != null)
         {
-            Drop();
-            pressing = false;
+            if (current.gameObject.tag == "ObjetoSuelto")
+            {
+                if (grabbing.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
+                {
+                    Drop();
+                    pressing = false;
+                }
+            }
+            else if (current.gameObject.tag == "ObjetoInventario")
+            {
+                if (gripping.GetStateDown(pose.inputSource) || Input.GetKeyUp("r"))
+                {
+                    Drop();
+                    griped = true;
+                }
+
+                if (gripping.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
+                {
+                    griped = false;
+                }
+            }
         }
     }
 

@@ -191,7 +191,7 @@ MonoBehaviour:
   grabbing:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  dropping:
+  gripping:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
   move:
@@ -208,6 +208,8 @@ MonoBehaviour:
   handSpeed: 0
   pressing: 0
   isUsing: 0
+  itemAction: 0
+  griped: 0
 --- !u!135 &7708722007189711387
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -699,7 +701,7 @@ MonoBehaviour:
   grabbing:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  dropping:
+  gripping:
     actionPath: /actions/default/in/GrabGrip
     needsReinit: 0
   move:
@@ -716,6 +718,8 @@ MonoBehaviour:
   handSpeed: 0
   pressing: 0
   isUsing: 0
+  itemAction: 0
+  griped: 0
 --- !u!135 &2889389229196760773
 SphereCollider:
   m_ObjectHideFlags: 0
