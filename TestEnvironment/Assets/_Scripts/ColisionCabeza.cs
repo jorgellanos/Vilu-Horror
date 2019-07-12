@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class LightChange : MonoBehaviour
 {
     public Transform head;
     public Transform feet;

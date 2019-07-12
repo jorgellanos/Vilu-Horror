@@ -61,6 +61,12 @@ public class Player : MonoBehaviour
             an.SetBool("walking",false);
         }
 
+        // Stop sound if there´s no marker
+        if (!currentHand)
+        {
+            aud.Stop();
+        }
+
         Sprint();
     }
 
@@ -69,8 +75,9 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "STAHP")
         {
-            Destroy(other.gameObject); // destroy marker2 on collision
             isMoving = false;
+            Destroy(other.gameObject); // destroy marker2 on collision
+            
         }
 
         if (other.tag == "Finish")
@@ -83,13 +90,21 @@ public class Player : MonoBehaviour
     {
         if (other.tag == "STAHP")
         {
-            Destroy(other.gameObject); // destroy marker2 on collision
             isMoving = false;
+            Destroy(other.gameObject); // destroy marker2 on collision
         }
 
         if (other.tag == "Finish")
         {
             vida.Death();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "STAHP")
+        {
+            isMoving = false;
         }
     }
     #endregion

@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - projectile
+  - FxTemporaire
+  - Body
+  - Hand
+  - Player Stealth
+  - STAHP
+  - ObjetoSuelto
+  - ObjetoInventario
+  - Event
   layers:
   - Default
   - TransparentFX
@@ -14,13 +23,13 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Inventory
+  - Piso
+  - Head
+  - Hands
+  - Objects
+  - Body
+  - Marker
   - 
   - 
   - 

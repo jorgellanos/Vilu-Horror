@@ -7,13 +7,15 @@ public class Hand : MonoBehaviour {
 
     // VR Inputs
     public SteamVR_Action_Boolean grabbing = null;
+    public SteamVR_Action_Boolean gripping = null;
     public SteamVR_Action_Boolean move = null;
+    public SteamVR_Action_Boolean useItem = null;
     private SteamVR_Behaviour_Pose pose = null;
 
     // Interaction
     private FixedJoint joint = null;
     private Interact current = null;
-    private List<Interact> contacts = new List<Interact>();
+    public List<Interact> contacts = new List<Interact>();
 
     // RayCast
     public RaycastHit hit;
@@ -27,12 +29,12 @@ public class Hand : MonoBehaviour {
 
     // Markers
     [HideInInspector]
-    public GameObject go, go2;
-    public GameObject marker, marker2;
+    public GameObject go;
+    public GameObject marker;
 
     // parameters
     public float distance, handDistance, handSpeed;
-    public bool pressing, isUsing;
+    public bool pressing, isUsing, itemAction, griped;
 
     private void Awake()
     {
@@ -46,12 +48,20 @@ public class Hand : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        ChangeState();
         Interacted();
 
-        if (ln.enabled)
+        if (!current)
         {
-            SetLaser();
+            ChangeState();
+        }
+        else
+        {
+            UseItem();
+        }
+
+        if (isUsing)
+        {
+            SetPoint();
         }
     }
 
@@ -64,24 +74,23 @@ public class Hand : MonoBehaviour {
     #region Triggers
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("ObjetoSuelto"))
+        if (other.tag == "ObjetoSuelto" || other.tag == "ObjetoInventario")
         {
-            return;
+            contacts.Add(other.gameObject.GetComponent<Interact>());
         }
-        contacts.Add(other.gameObject.GetComponent<Interact>());
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.CompareTag("ObjetoSuelto"))
+        if (other.tag == "ObjetoSuelto" || other.tag == "ObjetoInventario")
         {
-            return;
+            contacts.Remove(other.gameObject.GetComponent<Interact>());
         }
-        contacts.Remove(other.gameObject.GetComponent<Interact>());
     }
     #endregion
 
     #region Interact
+
     public void PickUp()
     {
         // get nearest
@@ -92,15 +101,18 @@ public class Hand : MonoBehaviour {
         {
             return;
         }
-
+        
         // already held
         if (current.activeHand)
         {
-            current.activeHand.Drop();
+            //current.activeHand.Drop();
         }
 
         // position
         current.transform.position = transform.position;
+
+        // rotation
+        current.transform.rotation = Quaternion.LookRotation(transform.forward);
 
         // attach
         Rigidbody target = current.GetComponent<Rigidbody>();
@@ -117,7 +129,7 @@ public class Hand : MonoBehaviour {
         {
             return;
         }
-
+        
         // apply velocity
         Rigidbody target = current.GetComponent<Rigidbody>();
         target.velocity = pose.GetVelocity();
@@ -125,7 +137,7 @@ public class Hand : MonoBehaviour {
 
         // detach
         joint.connectedBody = null;
-
+        
         // clear
         current.activeHand = null;
         current = null;
@@ -139,10 +151,42 @@ public class Hand : MonoBehaviour {
             pressing = true;
         }
 
-        if (grabbing.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
+        if (current != null)
         {
-            Drop();
-            pressing = false;
+            if (current.gameObject.tag == "ObjetoSuelto")
+            {
+                if (grabbing.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
+                {
+                    Drop();
+                    pressing = false;
+                }
+            }
+            else if (current.gameObject.tag == "ObjetoInventario")
+            {
+                if (gripping.GetStateDown(pose.inputSource) || Input.GetKeyUp("r"))
+                {
+                    Drop();
+                    griped = true;
+                }
+
+                if (gripping.GetStateUp(pose.inputSource) || Input.GetKeyUp("r"))
+                {
+                    griped = false;
+                }
+            }
+        }
+    }
+
+    public void UseItem()
+    {
+        if (move.GetStateDown(pose.inputSource) || Input.GetKeyDown("e"))
+        {
+            itemAction = true;
+        }
+
+        if (move.GetStateUp(pose.inputSource) || Input.GetKeyUp("e"))
+        {
+            itemAction = false;
         }
     }
 
@@ -165,9 +209,23 @@ public class Hand : MonoBehaviour {
         return nearest;
     }
     #endregion
-
+    
     #region Movement
-    public void SetLaser()
+
+    // sets cameraRig target position at marker2
+    public Vector3 SetDirection()
+    {
+        if (go)
+        {
+            return go.transform.position;
+        }
+        else
+        {
+            return pl.gameObject.transform.position;
+        }
+    }
+
+    public void SetPoint()
     {
         // Ray direction
         landingRay = new Ray(pointer.position, pointer.forward);
@@ -175,22 +233,16 @@ public class Hand : MonoBehaviour {
         // Show Marker at direction
         if (Physics.Raycast(landingRay, out hit, 20f))
         {
-            Destroy(go); // destroy clones
-            go = Instantiate(marker, hit.point, Quaternion.identity); // set marker 1 at raycast hit point
-            go.transform.position = hit.point; // marker1 follows raycast hit point position
+            if (!go)
+            {
+                go = Instantiate(marker, hit.point, Quaternion.identity); // set marker at raycast hit point
+            }
+            go.transform.position = hit.point; // marker follows raycast hit point position
         }
         else
         {
-            Destroy(go);
+            Destroy(go); // Destroy marker if raycast doesnt hit
         }
-    }
-
-    // sets cameraRig target position at marker2
-    public Vector3 SetDirection()
-    {
-        Destroy(go2);
-        go2 = Instantiate(marker2, go.transform.position, Quaternion.identity); // creates marker2 at raycast hit point
-        return go2.transform.position;
     }
 
     // Pressing the move button
@@ -198,20 +250,17 @@ public class Hand : MonoBehaviour {
     {
         if (move.GetStateDown(pose.inputSource) && !otherHand.isUsing || Input.GetKeyDown("space")) // pressed
         {
-            ln.enabled = true;
             isUsing = true;
+            ln.enabled = true;
         }
 
         if (move.GetStateUp(pose.inputSource) || Input.GetKeyUp("space")) // lifted
         {
             SetDirection();
             pl.isMoving = true;
-            ln.enabled = false;
             isUsing = false;
+            ln.enabled = false;
         }
     }
-    #endregion
-
-    #region Methods
     #endregion
 }

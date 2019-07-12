@@ -11,7 +11,7 @@ public class Interact : MonoBehaviour {
 
     private Sound s;
 
-    public bool examined, dropped, impact, touched;
+    public bool examined, dropped, impact, touched, picked;
     public float velocity;
     private TextMesh text;
 
@@ -20,7 +20,11 @@ public class Interact : MonoBehaviour {
         text = GetComponentInChildren<TextMesh>();
         s = GetComponent<Sound>();
         examined = false;
-        text.text = string.Empty;
+        picked = false;
+        if (text)
+        {
+            text.text = string.Empty;
+        }
     }
 
     private void Update()
@@ -31,10 +35,13 @@ public class Interact : MonoBehaviour {
         }
         else
         {
-            text.text = string.Empty;
+            if (text != null)
+            {
+                text.text = string.Empty;
+            }
         }
 
-        if (impact)
+        if (impact && s != null)
         {
             s.Impact(velocity);
             impact = false;
@@ -44,7 +51,7 @@ public class Interact : MonoBehaviour {
     #region COLLISIONS
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Hand")
+        if (other.tag == "Hand" || Input.GetKeyDown("l"))
         {
             examined = true;
             touched = true;
@@ -57,7 +64,6 @@ public class Interact : MonoBehaviour {
                 Debug.Log("OUF");
             }
         }
-
     }
 
     private void OnTriggerStay(Collider other)
@@ -70,7 +76,7 @@ public class Interact : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Hand")
+        if (other.tag == "Hand" || Input.GetKeyUp("l"))
         {
             examined = false;
         }
@@ -86,11 +92,15 @@ public class Interact : MonoBehaviour {
     #endregion
     public void Examine()
     {
-        text.text = gameObject.name; // show object STATS
+        if (text)
+        {
+            //text.text = gameObject.name; // show object STATS
+        }
     }
 
     public void GetVelocity(Vector3 vel)
     {
         velocity = vel.magnitude; // get velocity from hand velocity
     }
+    
 }
